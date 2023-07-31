@@ -8,7 +8,7 @@ pipeline{
         }
         stage("Run Tests"){
             steps{
-                bat "docker-compose -f 01-selenium-3-grid.yaml up search-module"
+                bat "docker-compose -f 01-selenium-3-grid.yaml up search-module.xml"
             }
         }
 
