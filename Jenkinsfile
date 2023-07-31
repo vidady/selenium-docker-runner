@@ -3,14 +3,10 @@ pipeline{
     stages{
         stage("Grid Up"){
             steps{
-                bat "docker-compose -f 01-selenium-3-grid.yaml up -d hub chrome firefox"
+                bat "docker-compose -f 01-selenium-3-grid.yaml up"
             }
         }
-        stage("Run Tests"){
-            steps{
-                bat "docker-compose -f 01-selenium-3-grid.yaml up search-module.xml"
-            }
-        }
+    
 
         stage("Grid Down"){
             steps{
