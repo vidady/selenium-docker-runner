@@ -2,6 +2,12 @@ pipeline{
     agent any
     stages{
 
+        stage("Clean Unused Images"){
+            steps{
+                bat "docker system prune -f"
+            }
+        }
+
         stage("Latest Code Pull"){
             steps{
                 bat "docker pull vidady/selenium-docker"
@@ -20,11 +26,7 @@ pipeline{
             }
         }
 
-          stage("Clean Unused Images"){
-            steps{
-                bat "docker system prune -f"
-            }
-        }
+
 
     }
 
